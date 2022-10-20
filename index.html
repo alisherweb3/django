@@ -6,8 +6,19 @@
   </head>
   <body>
     <h1>Board</h1>
+    <div>
+        <a href="/bboard/"> Main </a>
+        (% for rubric in rubrics %)
+        <a href="/bboard/{{ rubric.pk }}/">{{ rubric.name }}</a>
+        (% endfor %)
+    </div>
     <% for bb in bbs %)
     <div>
        <h2>{{ bb.title}}</h2>
+       <p>{{ bb.content }}</p>
+       <p><a href="/bboard/{{ bb.rubric.pk }}/">
+       {{ bb.rubric.name }}>/a></p>
+       <p>{{ bbb.published|date:"d.m.Y H:i:s" }}</p>
     </div>
+    (% endfor %)
   </body>
